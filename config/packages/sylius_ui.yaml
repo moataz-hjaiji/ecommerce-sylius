@@ -1,0 +1,6 @@
+sylius_ui:
+    events:
+        sylius.shop.homepage:
+            blocks:
+                slider: '_slider.html.twig'
+           
