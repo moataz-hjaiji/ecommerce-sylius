@@ -2,37 +2,37 @@
 
 namespace App\Entity;
 
-use App\Repository\SliderRepository;
+use App\Repository\ImageRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Sylius\Component\Core\Model\ImageInterface;
 use Sylius\Component\Core\Model\ImagesAwareInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 
-#[ORM\Entity(repositoryClass: SliderRepository::class)]
-
-class Slider implements ResourceInterface
+#[ORM\Entity(repositoryClass: ImageRepository::class)]
+class Image implements ResourceInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $link = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $test = null;
+    private ?string $image = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
-
     public function getTitle(): ?string
     {
         return $this->title;
@@ -62,21 +62,21 @@ class Slider implements ResourceInterface
         return $this->link;
     }
 
-    public function setLink(?string $link): static
+    public function setLink(string $link): static
     {
         $this->link = $link;
 
         return $this;
     }
 
-    public function getTest(): ?string
+    public function getImage(): ?string
     {
-        return $this->test;
+        return $this->image;
     }
 
-    public function setTest(string $test): static
+    public function setImage(string $image): static
     {
-        $this->test = $test;
+        $this->image = $image;
 
         return $this;
     }

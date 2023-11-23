@@ -14,6 +14,9 @@ class SliderType extends AbstractType
     {
         $builder
             ->add('title',TextType::class)
+            ->add('description',TextType::class,[
+                'required' => false
+            ])
         ;
     }
 

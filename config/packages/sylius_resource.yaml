@@ -6,10 +6,15 @@
 #            classes:
 #                model: App\Entity\Slider
 #                repository: App\Repository\SliderRepository
-#sylius_resource:
-#    resources:
-#        app.slider:
-#            driver: doctrine/orm
-#            classes:
-#                model: App\Entity\Slider
-#                repository: App\Repository\SliderRepository
+sylius_resource:
+    resources:
+        app.slider:
+            driver: doctrine/orm
+            classes:
+                model: App\Entity\Slider
+                repository: App\Repository\SliderRepository
+        app.image:
+            driver: doctrine/orm
+            classes:
+                model: App\Entity\Image
+                repository: App\Repository\ImageRepository
