@@ -1,0 +1,8 @@
+# config/packages/sylius_resource.yaml
+sylius_resource:
+    resources:
+        app.slider:
+            driver: doctrine/orm # You can use also different driver here
+            classes:
+                model: App\Entity\Slider
+                repository: App\Repository\SliderRepository

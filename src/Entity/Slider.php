@@ -6,10 +6,11 @@ use ApiPlatform\Metadata\ApiResource;
 use App\Repository\SliderRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Sylius\Component\Resource\Model\ResourceInterface;
 
 #[ORM\Entity(repositoryClass: SliderRepository::class)]
 #[ApiResource]
-class Slider
+class Slider implements ResourceInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
