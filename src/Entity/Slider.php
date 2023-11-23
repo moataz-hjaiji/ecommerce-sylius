@@ -2,15 +2,11 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Metadata\ApiResource;
 use App\Repository\SliderRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Sylius\Component\Resource\Model\ResourceInterface;
 
 #[ORM\Entity(repositoryClass: SliderRepository::class)]
-#[ApiResource]
-class Slider implements ResourceInterface
+class Slider
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -20,8 +16,11 @@ class Slider implements ResourceInterface
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $link = null;
 
     public function getId(): ?int
     {
@@ -48,6 +47,18 @@ class Slider implements ResourceInterface
     public function setDescription(?string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): static
+    {
+        $this->link = $link;
 
         return $this;
     }

@@ -254,31 +254,31 @@ sylius_theme:
             directories:
                 - "%kernel.project_dir%/themes"
 # config/packages/_sylius.yaml
-sylius_grid:
-    grids:
-        app_admin_slider:
-            driver:
-                name: doctrine/orm
-                options:
-                    class: App\Entity\Slider
-            fields:
-                name:
-                    type: string
-                    label: sylius.ui.name
-                description:
-                    type: string
-                    label: sylius.ui.description
-                enabled:
-                    type: twig
-                    label: sylius.ui.enabled
-                    options:
-                        template: "@SyliusUi/Grid/Field/enabled.html.twig"
-            actions:
-                main:
-                    create:
-                        type: create
-                item:
-                    update:
-                        type: update
-                    delete:
-                        type: delete
+#sylius_grid:
+#    grids:
+#        app_admin_slider:
+#            driver:
+#                name: doctrine/orm
+#                options:
+#                    class: App\Entity\Slider
+#            fields:
+#                name:
+#                    type: string
+#                    label: sylius.ui.name
+#                description:
+#                    type: string
+#                    label: sylius.ui.description
+#                enabled:
+#                    type: twig
+#                    label: sylius.ui.enabled
+#                    options:
+#                        template: "@SyliusUi/Grid/Field/enabled.html.twig"
+#            actions:
+#                main:
+#                    create:
+#                        type: create
+#                item:
+#                    update:
+#                        type: update
+#                    delete:
+#                        type: delete    

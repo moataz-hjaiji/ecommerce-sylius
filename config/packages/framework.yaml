@@ -1,6 +1,11 @@
 framework:
     translator: { fallbacks: ["%locale%"] }
     secret: '%env(APP_SECRET)%'
+    validation:
+        enabled: true
+        enable_annotations: true
+    annotations:
+        enabled: true
     form:
         enabled: true
         legacy_error_messages: false
@@ -8,12 +13,20 @@ framework:
     session:
         handler_id: ~
     serializer:
+        enabled: true
+        enable_annotations: true
         mapping:
             paths: [ '%kernel.project_dir%/config/serialization' ]
 
 when@dev:
     framework:
         profiler: { only_exceptions: false }
+#        annotations:
+#            enabled: true
+#        validation:
+#            enable_annotations: true
+#        serializer:
+#            enable_annotations: true
 
 when@test: &framework_test
     framework:
