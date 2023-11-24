@@ -1,0 +1,12 @@
+App\Entity\AlbumImage:
+    type: entity
+    table: app_album_image
+    manyToOne:
+        owner:
+            targetEntity: App\Entity\Album
+            inverseBy: images
+            joinColumn:
+                name: owner_id
+                referencedColumnName: id
+                nullable: false
+                onDelete: CASCADE
