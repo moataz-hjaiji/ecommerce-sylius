@@ -13,3 +13,9 @@
 #            classes:
 #                model: App\Entity\Slider
 #                repository: App\Repository\SliderRepository
+sylius_resource:
+    resources:
+        app.album:
+            classes:
+                model: App\Entity\Album
+                repository: App\Repository\AlbumRepository
