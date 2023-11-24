@@ -1,0 +1,10 @@
+App\Entity\Album:
+    type: entity
+    table: Album
+    oneToMany:
+        images:
+            targetEntity: App\Entity\AlbumImage
+            mappedBy: owner
+            orphanRemoval: true
+            cascade:
+                - all

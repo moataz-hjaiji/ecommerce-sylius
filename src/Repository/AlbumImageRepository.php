@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\AlbumImage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
 /**
  * @extends ServiceEntityRepository<AlbumImage>
@@ -14,12 +15,9 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method AlbumImage[]    findAll()
  * @method AlbumImage[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AlbumImageRepository extends ServiceEntityRepository
+class AlbumImageRepository extends EntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, AlbumImage::class);
-    }
+
 
 //    /**
 //     * @return AlbumImage[] Returns an array of AlbumImage objects

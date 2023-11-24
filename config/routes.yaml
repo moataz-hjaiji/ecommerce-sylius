@@ -9,16 +9,44 @@ odiseo_sylius_banner_plugin_shop:
     prefix: /{_locale}/banners
     requirements:
         _locale: ^[A-Za-z]{2,4}(_([A-Za-z]{4}|[0-9]{3}))?(_([A-Za-z]{2}|[0-9]{3}))?$
-#app_admin_slider:
+app_admin_slider:
+    resource: |
+        alias: app.slider
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: app_admin_slider
+        vars:
+            all:
+                subheader: app.ui.slider
+            index:
+                icon: 'file image outline'
+    type: sylius.resource
+    prefix: /admin
+app_admin_album:
+    resource: |
+        alias: app.album
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: app_admin_album
+        vars:
+            all:
+                subheader: app.ui.album
+            index:
+                icon: 'file image outline'
+    type: sylius.resource
+    prefix: /admin
+#app_admin_album_image:
 #    resource: |
-#        alias: app.slider
+#        alias: app.album.image
 #        section: admin
 #        templates: "@SyliusAdmin\\Crud"
 #        redirect: update
-#        grid: app_admin_slider
+#        grid: app_admin_album_image
 #        vars:
 #            all:
-#                subheader: app.ui.slider
+#                subheader: app.ui.album.image
 #            index:
 #                icon: 'file image outline'
 #    type: sylius.resource

@@ -1,21 +1,17 @@
 ## config/packages/sylius_resource.yaml
-#sylius_resource:
-#    resources:
-#        app.slider:
-#            driver: doctrine/orm # You can use also different driver here
-#            classes:
-#                model: App\Entity\Slider
-#                repository: App\Repository\SliderRepository
-#sylius_resource:
-#    resources:
-#        app.slider:
-#            driver: doctrine/orm
-#            classes:
-#                model: App\Entity\Slider
-#                repository: App\Repository\SliderRepository
 sylius_resource:
     resources:
+        app.slider:
+            driver: doctrine/orm
+            classes:
+                model: App\Entity\Slider
+                repository: App\Repository\SliderRepository
         app.album:
             classes:
                 model: App\Entity\Album
                 repository: App\Repository\AlbumRepository
+#        app.album.image:
+#            classes:
+#                model: App\Entity\AlbumImage
+#                repository: App\Repository\AlbumImageRepository
+#                form: App\Form\AlbumImageType

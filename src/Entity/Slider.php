@@ -4,9 +4,10 @@ namespace App\Entity;
 
 use App\Repository\SliderRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Sylius\Component\Resource\Model\ResourceInterface;
 
 #[ORM\Entity(repositoryClass: SliderRepository::class)]
-class Slider
+class Slider implements ResourceInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
