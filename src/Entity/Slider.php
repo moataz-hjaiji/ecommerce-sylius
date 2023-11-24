@@ -4,12 +4,9 @@ namespace App\Entity;
 
 use App\Repository\SliderRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Sylius\Component\Core\Model\ImagesAwareInterface;
-use Sylius\Component\Resource\Model\ResourceInterface;
 
 #[ORM\Entity(repositoryClass: SliderRepository::class)]
-
-class Slider implements ResourceInterface
+class Slider
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -24,9 +21,6 @@ class Slider implements ResourceInterface
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $link = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $test = null;
 
     public function getId(): ?int
     {
@@ -65,18 +59,6 @@ class Slider implements ResourceInterface
     public function setLink(?string $link): static
     {
         $this->link = $link;
-
-        return $this;
-    }
-
-    public function getTest(): ?string
-    {
-        return $this->test;
-    }
-
-    public function setTest(string $test): static
-    {
-        $this->test = $test;
 
         return $this;
     }
