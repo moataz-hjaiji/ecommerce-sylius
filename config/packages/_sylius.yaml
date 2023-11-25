@@ -291,9 +291,9 @@ sylius_grid:
                 name:
                     type: string
                     label: sylius.ui.name
-                description:
-                    type: string
-                    label: sylius.ui.description
+#                description:
+#                    type: string
+#                    label: sylius.ui.description
             actions:
                 main:
                     create:
@@ -303,17 +303,17 @@ sylius_grid:
                         type: update
                     delete:
                         type: delete
-#        app_admin_Album_image:
-#            driver:
-#                name: doctrine/orm
-#                options:
-#                    class: App\Entity\AlbumImage
-#            actions:
-#                main:
-#                    create:
-#                        type: create
-#                item:
-#                    update:
-#                        type: update
-#                    delete:
-#                        type: delete
+        app_admin_album_image:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: App\Entity\AlbumImage
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

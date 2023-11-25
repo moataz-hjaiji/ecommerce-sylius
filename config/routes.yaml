@@ -37,17 +37,17 @@ app_admin_album:
                 icon: 'file image outline'
     type: sylius.resource
     prefix: /admin
-#app_admin_album_image:
-#    resource: |
-#        alias: app.album.image
-#        section: admin
-#        templates: "@SyliusAdmin\\Crud"
-#        redirect: update
-#        grid: app_admin_album_image
-#        vars:
-#            all:
-#                subheader: app.ui.album.image
-#            index:
-#                icon: 'file image outline'
-#    type: sylius.resource
-#    prefix: /admin
+app_admin_album_image:
+    resource: |
+        alias: app.album.image
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: app_admin_album_image
+        vars:
+            all:
+                subheader: app.ui.album.image
+            index:
+                icon: 'file image outline'
+    type: sylius.resource
+    prefix: /admin

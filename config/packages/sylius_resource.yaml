@@ -10,8 +10,8 @@ sylius_resource:
             classes:
                 model: App\Entity\Album
                 repository: App\Repository\AlbumRepository
-#        app.album.image:
-#            classes:
-#                model: App\Entity\AlbumImage
-#                repository: App\Repository\AlbumImageRepository
-#                form: App\Form\AlbumImageType
+        app.album.image:
+            classes:
+                model: App\Entity\AlbumImage
+                repository: App\Repository\AlbumImageRepository
+                form: App\Form\AlbumImageType

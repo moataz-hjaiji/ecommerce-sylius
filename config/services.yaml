@@ -40,15 +40,15 @@ services:
     App\Command\Admin\CreateAdminCommand:
         arguments:
             $name: 'default'
-#    app.form.type.album_image:
-#        class: App\Form\AlbumImageType
-#        tags:
-#            - { name: form.type }
-#        arguments: ['%app.model.album.image.class%']
-#    app.form.extension.type.album:
-#        class: App\Form\AlbumType
-#        tags:
-#            - { name: form.type_extension, extended_type:  App\Form\AlbumImageType }
+    app.form.type.album_image:
+        class: App\Form\AlbumImageType
+        tags:
+            - { name: form.type }
+        arguments: ['%app.model.album.image.class%']
+    app.form.extension.type.album:
+        class: App\Form\AlbumType
+        tags:
+            - { name: form.type_extension, extended_type:  App\Form\AlbumImageType }
     app.listener.images_upload:
         class: Sylius\Bundle\CoreBundle\EventListener\ImagesUploadListener
         parent: sylius.listener.images_upload
@@ -58,3 +58,7 @@ services:
         tags:
             - { name: kernel.event_listener, event: app.album.pre_create, method: uploadImages }
             - { name: kernel.event_listener, event: app.album.pre_update, method: uploadImages }
+#    App\Form\Type\AlbumImageType:
+#        arguments:
+#            $dataClass: App\Entity\AlbumImage
+#            $validationGroups: ['sylius']

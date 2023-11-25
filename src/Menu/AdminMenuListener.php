@@ -24,10 +24,10 @@ final class AdminMenuListener
             ->setLabel('Album')
             ->setLabelAttribute('icon', 'star')
         ;
-//        $newSubmenu
-//            ->addChild('sub-image',['route'=>'app_admin_album.image_index'])
-//            ->setLabel('Image slider')
-//            ->setLabelAttribute('icon', 'picture')
-//        ;
+        $newSubmenu
+            ->addChild('new-subitem-3',['route'=>'app_admin_album.image_index'])
+            ->setLabel('Image slider')
+            ->setLabelAttribute('icon', 'picture')
+        ;
     }
 }
