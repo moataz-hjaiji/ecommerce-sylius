@@ -1,52 +1,15 @@
 sylius_paypal_webhook:
     resource: "@SyliusPayPalPlugin/Resources/config/webhook_routing.yaml"
-odiseo_sylius_banner_plugin_admin:
-    resource: "@OdiseoSyliusBannerPlugin/Resources/config/routing/admin.yaml"
-    prefix: /admin
-
-odiseo_sylius_banner_plugin_shop:
-    resource: "@OdiseoSyliusBannerPlugin/Resources/config/routing/shop.yaml"
-    prefix: /{_locale}/banners
-    requirements:
-        _locale: ^[A-Za-z]{2,4}(_([A-Za-z]{4}|[0-9]{3}))?(_([A-Za-z]{2}|[0-9]{3}))?$
-app_admin_slider:
+app_admin_image:
     resource: |
-        alias: app.slider
+        alias: app.image
         section: admin
         templates: "@SyliusAdmin\\Crud"
         redirect: update
-        grid: app_admin_slider
+        grid: app_admin_image
         vars:
             all:
-                subheader: app.ui.slider
-            index:
-                icon: 'file image outline'
-    type: sylius.resource
-    prefix: /admin
-app_admin_album:
-    resource: |
-        alias: app.album
-        section: admin
-        templates: "@SyliusAdmin\\Crud"
-        redirect: update
-        grid: app_admin_album
-        vars:
-            all:
-                subheader: app.ui.album
-            index:
-                icon: 'file image outline'
-    type: sylius.resource
-    prefix: /admin
-app_admin_album_image:
-    resource: |
-        alias: app.album.image
-        section: admin
-        templates: "@SyliusAdmin\\Crud"
-        redirect: update
-        grid: app_admin_album_image
-        vars:
-            all:
-                subheader: app.ui.album.image
+                subheader: app.ui.image
             index:
                 icon: 'file image outline'
     type: sylius.resource

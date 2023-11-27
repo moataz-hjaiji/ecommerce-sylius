@@ -1,3 +1,0 @@
-# config/packages/odiseo_sylius_banner.yaml
-odiseo_sylius_banner:
-    slider: swiper #swiper, glide, sliderpro. If you don't want any use ~

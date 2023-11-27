@@ -253,6 +253,13 @@
       <path value="$PROJECT_DIR$/vendor/winzou/state-machine-bundle" />
       <path value="$PROJECT_DIR$/vendor/sylius/sylius" />
       <path value="$PROJECT_DIR$/vendor/odiseoteam/sylius-banner-plugin" />
+      <path value="$PROJECT_DIR$/vendor/stella-maris/clock" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/zenstruck/foundry" />
+      <path value="$PROJECT_DIR$/vendor/zenstruck/assert" />
+      <path value="$PROJECT_DIR$/vendor/zenstruck/callback" />
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
     </include_path>
   </component>

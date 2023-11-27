@@ -1,17 +1,8 @@
-## config/packages/sylius_resource.yaml
 sylius_resource:
     resources:
-        app.slider:
+        app.image:
             driver: doctrine/orm
             classes:
-                model: App\Entity\Slider
-                repository: App\Repository\SliderRepository
-        app.album:
-            classes:
-                model: App\Entity\Album
-                repository: App\Repository\AlbumRepository
-        app.album.image:
-            classes:
-                model: App\Entity\AlbumImage
-                repository: App\Repository\AlbumImageRepository
-                form: App\Form\AlbumImageType
+                model: App\Entity\Image
+                repository: App\Repository\ImageRepository
+                form: App\Form\ImageType

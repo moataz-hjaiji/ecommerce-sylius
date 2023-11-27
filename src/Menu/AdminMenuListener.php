@@ -15,17 +15,17 @@ final class AdminMenuListener
             ->setLabel('test')
         ;
         $newSubmenu
-            ->addChild('new-subitem',['route'=>'app_admin_slider_index'])
+            ->addChild('new-subitem')
             ->setLabel('Slider')
             ->setLabelAttribute('icon', 'star')
         ;
         $newSubmenu
-            ->addChild('new-subitem-2',['route'=>'app_admin_album_index'])
+            ->addChild('new-subitem-2')
             ->setLabel('Album')
             ->setLabelAttribute('icon', 'star')
         ;
         $newSubmenu
-            ->addChild('new-subitem-3',['route'=>'app_admin_album.image_index'])
+            ->addChild('new-subitem-3',['route'=>'app_admin_image_index'])
             ->setLabel('Image slider')
             ->setLabelAttribute('icon', 'picture')
         ;
