@@ -270,7 +270,7 @@ sylius_grid:
                     type: twig
                     label: 'image'
                     options:
-                        template: "_fieldImage.html.twig"
+                        template: "images/index.html.twig"
 #                enabled:
 #                    type: twig
 #                    label: sylius.ui.enabled

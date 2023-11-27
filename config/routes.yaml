@@ -14,3 +14,8 @@ app_admin_image:
                 icon: 'file image outline'
     type: sylius.resource
     prefix: /admin
+app_admin_image_show:
+    path: /admin/images/{id}
+    requirements:
+        id: '\d+'
+    controller: App\Controller\ImagesController::index
