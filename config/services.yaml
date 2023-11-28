@@ -40,3 +40,7 @@ services:
     App\Command\Admin\CreateAdminCommand:
         arguments:
             $name: 'default'
+    app.image:
+        class: App\Entity\Image
+        tags:
+            - { name: form.type }

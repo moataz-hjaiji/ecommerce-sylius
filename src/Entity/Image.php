@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\ImageRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Resource\Model\ResourceInterface;
@@ -33,6 +35,14 @@ class Image implements ResourceInterface
     private ?string $imageName = null;
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
+
+    #[ORM\ManyToMany(targetEntity: Slider::class, mappedBy: 'images')]
+    private Collection $sliders;
+
+    public function __construct()
+    {
+        $this->sliders = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -101,5 +111,32 @@ class Image implements ResourceInterface
     public function getData(): ?string
     {
         return $this->imageName;
+    }
+
+    /**
+     * @return Collection<int, Slider>
+     */
+    public function getSliders(): Collection
+    {
+        return $this->sliders;
+    }
+
+    public function addSlider(Slider $slider): static
+    {
+        if (!$this->sliders->contains($slider)) {
+            $this->sliders->add($slider);
+            $slider->addImage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSlider(Slider $slider): static
+    {
+        if ($this->sliders->removeElement($slider)) {
+            $slider->removeImage($this);
+        }
+
+        return $this;
     }
 }
