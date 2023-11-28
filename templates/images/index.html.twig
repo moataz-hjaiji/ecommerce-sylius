@@ -1,2 +1,7 @@
+<div style="display: flex;">
+    {% for image in images %}
+        <img src="{{ "/media/image" ~ asset(image.path) }}" style="width: 200px;">
+    {% endfor %}
+</div>
 
 

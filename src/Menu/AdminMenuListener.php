@@ -15,18 +15,8 @@ final class AdminMenuListener
             ->setLabel('test')
         ;
         $newSubmenu
-            ->addChild('new-subitem')
-            ->setLabel('Slider')
-            ->setLabelAttribute('icon', 'star')
-        ;
-        $newSubmenu
-            ->addChild('new-subitem-2',['route'=>'app_admin_slider_index'])
-            ->setLabel('Album')
-            ->setLabelAttribute('icon', 'star')
-        ;
-        $newSubmenu
             ->addChild('new-subitem-3',['route'=>'app_admin_image_index'])
-            ->setLabel('Image slider')
+            ->setLabel('Slider')
             ->setLabelAttribute('icon', 'picture')
         ;
     }
