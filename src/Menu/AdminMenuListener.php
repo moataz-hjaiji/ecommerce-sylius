@@ -20,7 +20,7 @@ final class AdminMenuListener
             ->setLabelAttribute('icon', 'star')
         ;
         $newSubmenu
-            ->addChild('new-subitem-2')
+            ->addChild('new-subitem-2',['route'=>'app_admin_slider_index'])
             ->setLabel('Album')
             ->setLabelAttribute('icon', 'star')
         ;

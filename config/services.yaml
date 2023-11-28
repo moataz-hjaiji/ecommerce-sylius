@@ -40,7 +40,21 @@ services:
     App\Command\Admin\CreateAdminCommand:
         arguments:
             $name: 'default'
-    app.image:
-        class: App\Entity\Image
+#    app.image:
+#        class: App\Entity\Image
+#        tags:
+#            - { name: form.type }
+    app.image.type.form.type:
+        class: App\Form\ImageType
         tags:
             - { name: form.type }
+        arguments: ['App\Entity\Image']
+    app.listener.image.upload:
+        class: App\EventListener\ImageUploader
+        autowire: true
+        autoconfigure: false
+        public: false
+        tags:
+            - { name: kernel.event_listener, event: app.image.pre_create, method: upload }
+            - { name: kernel.event_listener, event: app.image.pre_update, method: edit }
+            - { name: kernel.event_listener, event: app.image.pre_delete, method: delete }

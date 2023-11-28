@@ -4,5 +4,11 @@ sylius_resource:
             driver: doctrine/orm
             classes:
                 model: App\Entity\Image
-                repository: App\Repository\ImageRepository
+#                repository: App\Repository\ImageRepository
                 form: App\Form\ImageType
+        app.slider:
+            driver: doctrine/orm
+            classes:
+                model: App\Entity\Slider
+                form: App\Form\SliderFormType
+                repository: App\Repository\SliderRepository

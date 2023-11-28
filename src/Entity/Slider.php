@@ -6,9 +6,12 @@ use App\Repository\SliderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Sylius\Component\Resource\Model\ResourceInterface;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: SliderRepository::class)]
-class Slider
+#[Vich\Uploadable]
+class Slider implements ResourceInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,7 +21,9 @@ class Slider
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\ManyToMany(targetEntity: Image::class, inversedBy: 'sliders')]
+//    #[ORM\ManyToMany(targetEntity: Image::class, inversedBy: 'sliders')]
+
+
     private Collection $images;
 
     public function __construct()
@@ -43,9 +48,6 @@ class Slider
         return $this;
     }
 
-    /**
-     * @return Collection<int, Image>
-     */
     public function getImages(): Collection
     {
         return $this->images;

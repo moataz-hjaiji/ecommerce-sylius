@@ -5,13 +5,14 @@ app_admin_image:
         alias: app.image
         section: admin
         templates: "@SyliusAdmin\\Crud"
-        redirect: update
+        redirect: index
         grid: app_admin_image
         vars:
             all:
-                subheader: app.ui.image
+                subheader: image
             index:
                 icon: 'file image outline'
+    
     type: sylius.resource
     prefix: /admin
 app_admin_image_show:
@@ -19,3 +20,17 @@ app_admin_image_show:
     requirements:
         id: '\d+'
     controller: App\Controller\ImagesController::index
+app_admin_slider:
+    resource: |
+        alias: app.slider
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: app_admin_slider
+        vars:
+            all:
+                subheader: slider
+            index:
+                icon: 'file image outline'
+    type: sylius.resource
+    prefix: /admin
