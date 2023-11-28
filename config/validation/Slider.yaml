@@ -1,0 +1,4 @@
+App\Entity\Slider:
+    properties:
+        images:
+            - Valid: ~

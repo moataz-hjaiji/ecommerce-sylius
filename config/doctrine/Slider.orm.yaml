@@ -1,9 +1,9 @@
-App\Entity\Album:
+App\Entity\Slider:
     type: entity
-    table: Album
-    oneToMany:
+    table: sylius_slider
+    manyToMany:
         images:
-            targetEntity: App\Entity\AlbumImage
+            targetEntity: App\Entity\Image
             mappedBy: owner
             orphanRemoval: true
             cascade:

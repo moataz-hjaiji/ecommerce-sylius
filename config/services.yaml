@@ -58,3 +58,21 @@ services:
             - { name: kernel.event_listener, event: app.image.pre_create, method: upload }
             - { name: kernel.event_listener, event: app.image.pre_update, method: edit }
             - { name: kernel.event_listener, event: app.image.pre_delete, method: delete }
+    app.form.type.app_admin_image:
+        class: App\Form\Extension\SliderImageTypeExtension
+        tags:
+            - { name: form.type }
+        arguments: ['%app.model.image.class%']
+    app.form.extension.type.slider:
+        class: App\Form\Extension\SliderTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: App\Form\Extension\SliderTypeExtension }
+    app.listener.images_upload:
+        class: Sylius\Bundle\CoreBundle\EventListener\ImagesUploadListener
+        parent: sylius.listener.images_upload
+        autowire: true
+        autoconfigure: false
+        public: false
+        tags:
+            - { name: kernel.event_listener, event: sylius.slider.pre_create, method: uploadImages }
+            - { name: kernel.event_listener, event: sylius.slider.pre_update, method: uploadImages }

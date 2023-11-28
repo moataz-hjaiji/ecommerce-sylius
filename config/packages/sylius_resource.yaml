@@ -5,10 +5,10 @@ sylius_resource:
             classes:
                 model: App\Entity\Image
 #                repository: App\Repository\ImageRepository
-                form: App\Form\ImageType
+                form: App\Form\Extension\SliderImageTypeExtension
         app.slider:
             driver: doctrine/orm
             classes:
                 model: App\Entity\Slider
                 form: App\Form\SliderFormType
-                repository: App\Repository\SliderRepository
+#                repository: App\Repository\SliderRepository

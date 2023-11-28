@@ -1,10 +1,10 @@
-App\Entity\AlbumImage:
+App\Entity\Image:
     type: entity
-    table: app_album_image
-    manyToOne:
+    table: app_slider_image
+    manyToMany:
         owner:
-            targetEntity: App\Entity\Album
-            inverseBy: images
+            targetEntity: App\Entity\Slider
+            inversedBy: images
             joinColumn:
                 name: owner_id
                 referencedColumnName: id

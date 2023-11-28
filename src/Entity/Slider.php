@@ -6,12 +6,13 @@ use App\Repository\SliderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Sylius\Component\Core\Model\ImageInterface;
+use Sylius\Component\Core\Model\ImagesAwareInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: SliderRepository::class)]
-#[Vich\Uploadable]
-class Slider implements ResourceInterface
+class Slider implements ResourceInterface,ImagesAwareInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -21,10 +22,10 @@ class Slider implements ResourceInterface
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-//    #[ORM\ManyToMany(targetEntity: Image::class, inversedBy: 'sliders')]
-
-
-    private Collection $images;
+    /**
+     * @var Collection|ImageInterface[]
+     */
+    private Collection|array $images;
 
     public function __construct()
     {
@@ -53,19 +54,38 @@ class Slider implements ResourceInterface
         return $this->images;
     }
 
-    public function addImage(Image $image): static
-    {
-        if (!$this->images->contains($image)) {
-            $this->images->add($image);
-        }
 
-        return $this;
+    public function getImagesByType(string $type): Collection
+    {
+        return $this->images->filter(function (ImageInterface $image) use ($type) {
+            return $type === $image->getType();
+        });
     }
 
-    public function removeImage(Image $image): static
+    public function hasImages(): bool
     {
-        $this->images->removeElement($image);
+        return !$this->images->isEmpty();
+    }
 
-        return $this;
+
+    public function hasImage(ImageInterface $image): bool
+    {
+        return $this->images->contains($image);
+    }
+
+
+    public function addImage(ImageInterface $image): void
+    {
+        $image->setOwner($this);
+        $this->images->add($image);
+    }
+
+
+    public function removeImage(ImageInterface $image): void
+    {
+        if ($this->hasImage($image)) {
+            $image->setOwner(null);
+            $this->images->removeElement($image);
+        }
     }
 }
