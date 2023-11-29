@@ -16,7 +16,40 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 #[ApiResource]
 class Image extends \Sylius\Component\Core\Model\Image implements ResourceInterface, ImageInterface
 {
+    protected $type;
+    protected $file;
 
+    /**
+     * @return mixed
+     */
+    public function getFile(): ?\SplFileInfo
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param mixed $file
+     */
+    public function setFile($file): void
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type): void
+    {
+        $this->type = $type;
+    }
     #[ORM\Column(length: 255,nullable: true)]
     private ?string $title = null;
 

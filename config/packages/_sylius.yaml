@@ -260,6 +260,9 @@ sylius_grid:
                 options:
                     class: App\Entity\Image
             fields:
+                title:
+                    type: string
+                    label: sylius.ui.name
                 path:
                     type: twig
                     options:

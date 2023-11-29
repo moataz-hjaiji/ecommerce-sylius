@@ -3,4 +3,10 @@ sylius_ui:
         sylius.shop.homepage:
             blocks:
                 slider: '_slider.html.twig'
+        app.ui.new_image:
+            blocks:
+                disclaimer:
+                    template: 'block.html.twig'
+                    priority: 11
+                
            

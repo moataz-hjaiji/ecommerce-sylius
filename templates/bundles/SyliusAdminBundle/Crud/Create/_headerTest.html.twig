@@ -1,0 +1,22 @@
+{#{% extends '@SyliusUi/Form/imagesTheme.html.twig' %}#}
+{#{% block sylius_image_widget %}#}
+{#    {% apply spaceless %}#}
+{#        {{ form_start(form) }}#}
+{#        {{ form_rest(form) }}#}
+{#        {{ form_row(title) }}#}
+{#        {{ form_end(form) }}#}
+{#    {% endapply %}#}
+{#{% endblock %}#}
+
+
+{% extends '@SyliusUi/Form/imagesTheme.html.twig' %}
+
+{% block sylius_image_widget %}
+    {% apply spaceless %}
+        {{ form_start(form) }}
+        {% for child in form.children %}
+            {{ form_row(child) }}
+        {% endfor %}
+        {{ form_end(form) }}
+    {% endapply %}
+{% endblock %}
