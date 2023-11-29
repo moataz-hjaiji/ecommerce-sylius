@@ -9,5 +9,8 @@
   },
   "devDependencies": {
     "@sylius-ui/frontend": "^1.0"
+  },
+  "dependencies": {
+    "swiper": "^11.0.5"
   }
 }
