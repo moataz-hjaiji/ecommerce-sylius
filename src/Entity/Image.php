@@ -9,15 +9,16 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Resource\Model\ResourceInterface;
-use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ImageRepository::class)]
 #[ApiResource]
 class Image extends \Sylius\Component\Core\Model\Image implements ResourceInterface, ImageInterface
 {
-    protected $type;
+
+    #[Assert\NotBlank]
     protected $file;
+
 
     /**
      * @return mixed
