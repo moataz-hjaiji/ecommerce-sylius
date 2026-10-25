@@ -25,7 +25,7 @@
         "php": "^8.0",
         "doctrine/annotations": "^2.0",
         "knplabs/knp-menu": "^3.4",
-        "lcobucci/clock": "^2.3",
+        "lcobucci/clock": "^3.0",
         "lcobucci/jwt": "^4.0",
         "sylius/paypal-plugin": "^1.5",
         "sylius/sylius": "^1.12.11",
